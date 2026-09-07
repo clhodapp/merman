@@ -45,6 +45,21 @@ Building the package alone would have caught neither.
 
 `nix fmt` formats.
 
+## Binary cache
+
+What `main` builds is pushed to the `clhodapp` cachix cache, signed with
+its key, so a consumer at the same pins substitutes the compiled binary
+instead of building it. That cache skips paths its upstreams already
+hold, so using it means using them too:
+
+| Substituter | Public key |
+|---|---|
+| `https://clhodapp.cachix.org` | `clhodapp.cachix.org-1:EW/0conxH0OQyo0o4ub/grdkFspholmQMSnQyj0vrZI=` |
+| `https://nix-community.cachix.org` | `nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=` |
+| `https://numtide.cachix.org` | `numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE=` |
+
+Add all three to `extra-substituters` and `extra-trusted-public-keys`.
+
 ## License
 
 The packaging here is MIT, see [`LICENSE`](LICENSE). merman itself is
