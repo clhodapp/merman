@@ -9,11 +9,6 @@
 {
 
   debug = false;
-  systems = [
-    "x86_64-linux"
-    "aarch64-linux"
-  ];
-
   caisson = {
     configInfo.configName = "merman";
     libOverlays.exported = libOverlays: {
