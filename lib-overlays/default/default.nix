@@ -3,7 +3,7 @@
 {
 
   overlay = final: prev: {
-    merman = prev.merman or { };
+    merman-nix = prev.merman-nix or { };
   };
 
 }

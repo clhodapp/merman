@@ -10,7 +10,7 @@
 
   debug = false;
   caisson = {
-    configInfo.configName = "merman";
+    configInfo.configName = "merman-nix";
     libOverlays.exported = libOverlays: {
       inherit (libOverlays) default;
     };
@@ -29,7 +29,7 @@
     };
   };
 
-  # `nix run github:clhodapp/merman` should reach the renderer, which is
+  # `nix run github:clhodapp/merman-nix` should reach the renderer, which is
   # the binary anyone arrives here for.
   perSystem =
     { config, ... }:
