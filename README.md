@@ -1,4 +1,4 @@
-# merman
+# merman-nix
 
 Nix packaging of [merman](https://github.com/Latias94/merman), a
 headless Rust implementation of mermaid. It ships two binaries:
@@ -11,19 +11,19 @@ result as an overlay.
 ## Use it
 
 ```sh
-nix run github:clhodapp/merman -- mmdc -i diagram.mmd -o diagram.svg
+nix run github:clhodapp/merman-nix -- mmdc -i diagram.mmd -o diagram.svg
 ```
 
 As a flake input:
 
 ```nix
 {
-  inputs.merman.url = "github:clhodapp/merman";
+  inputs.merman-nix.url = "github:clhodapp/merman-nix";
 
   # the package:
-  #   inputs.merman.packages.${system}.merman
+  #   inputs.merman-nix.packages.${system}.merman
   # or through the overlay, landing at pkgs.merman.merman:
-  #   nixpkgs.overlays = [ inputs.merman.overlays.packages ];
+  #   nixpkgs.overlays = [ inputs.merman-nix.overlays.packages ];
 }
 ```
 

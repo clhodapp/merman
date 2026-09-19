@@ -49,7 +49,7 @@
       };
     in
     lib.caisson.flake-parts.mkConfiguration {
-      name = "merman";
+      name = "merman-nix";
       configModule = lib.caisson.flake-parts.mkModule ./configs/flake-parts/default;
     };
 
