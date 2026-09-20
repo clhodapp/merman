@@ -8,6 +8,8 @@
 }:
 {
 
+  imports = [ inputs.flake-parts.flakeModules.partitions ];
+
   debug = false;
   caisson = {
     configInfo.configName = "merman-nix";
