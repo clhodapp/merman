@@ -35,6 +35,7 @@
     let
       lib = caisson.lib.caisson-core.mkLib {
         inherit inputs;
+        namespace = "merman-nix";
         systems = [
           "x86_64-linux"
           "aarch64-linux"
@@ -47,7 +48,6 @@
       };
     in
     lib.caisson.flake-parts.mkConfiguration {
-      name = "merman-nix";
       configModule = lib.caisson.flake-parts.mkModule ./configs/flake-parts/default;
     };
 
