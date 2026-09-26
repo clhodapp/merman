@@ -12,7 +12,6 @@
 
   debug = false;
   caisson = {
-    configInfo.configName = "merman-nix";
     libOverlays.exported = libOverlays: {
       inherit (libOverlays) default;
     };
